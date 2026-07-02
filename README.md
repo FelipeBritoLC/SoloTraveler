@@ -7,7 +7,6 @@ cadastra suas viagens, organiza atividades dia após dia (com categoria, horári
 custo) e pode tornar seu roteiro público para inspirar outros viajantes em um feed
 paginado e filtrável por categoria.
 
-Baseado na proposta apresentada em `Apresentação_Projeto_RAD_-_Solo_Traveler.pdf`.
 
 ---
 
