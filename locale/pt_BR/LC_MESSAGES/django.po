@@ -1,0 +1,304 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-01 22:45-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: templates/base.html:366
+msgid "Feed"
+msgstr ""
+
+#: templates/base.html:371 travels/templates/travels/viagem_form.html:7
+msgid "Nova viagem"
+msgstr ""
+
+#: templates/base.html:381
+msgid "Sair"
+msgstr ""
+
+#: templates/base.html:385 templates/registration/login.html:7
+#: templates/registration/login.html:13
+msgid "Entrar"
+msgstr ""
+
+#: templates/base.html:386 templates/registration/login.html:17
+#: templates/registration/register.html:7
+#: templates/registration/register.html:13
+msgid "Criar conta"
+msgstr ""
+
+#: templates/base.html:412
+msgid "Projeto acadêmico de Desenvolvimento Ágil com Django"
+msgstr ""
+
+#: templates/registration/login.html:6
+msgid "Bem-vindo de volta"
+msgstr ""
+
+#: templates/registration/login.html:17
+msgid "Ainda não tem conta?"
+msgstr ""
+
+#: templates/registration/register.html:6
+msgid "Comece a planejar"
+msgstr ""
+
+#: travels/forms.py:11
+msgid "e-mail"
+msgstr ""
+
+#: travels/forms.py:33 travels/models.py:47
+msgid "A data de fim não pode ser anterior à data de início."
+msgstr ""
+
+#: travels/forms.py:57
+#, python-format
+msgid ""
+"A data da atividade deve estar dentro do período da viagem (%(inicio)s a "
+"%(fim)s)."
+msgstr ""
+
+#: travels/models.py:9 travels/models.py:70
+msgid "nome"
+msgstr ""
+
+#: travels/models.py:12 travels/models.py:68
+msgid "categoria"
+msgstr ""
+
+#: travels/models.py:13
+msgid "categorias"
+msgstr ""
+
+#: travels/models.py:26
+msgid "usuário"
+msgstr ""
+
+#: travels/models.py:28
+msgid "título"
+msgstr ""
+
+#: travels/models.py:29
+msgid "destino"
+msgstr ""
+
+#: travels/models.py:30
+msgid "data de início"
+msgstr ""
+
+#: travels/models.py:31
+msgid "data de fim"
+msgstr ""
+
+#: travels/models.py:32
+msgid "pública"
+msgstr ""
+
+#: travels/models.py:33
+msgid "foto de capa"
+msgstr ""
+
+#: travels/models.py:34
+msgid "criada em"
+msgstr ""
+
+#: travels/models.py:37 travels/models.py:65
+msgid "viagem"
+msgstr ""
+
+#: travels/models.py:38
+msgid "viagens"
+msgstr ""
+
+#: travels/models.py:71
+msgid "data e hora"
+msgstr ""
+
+#: travels/models.py:72
+msgid "custo estimado"
+msgstr ""
+
+#: travels/models.py:73
+msgid "descrição"
+msgstr ""
+
+#: travels/models.py:76
+msgid "atividade"
+msgstr ""
+
+#: travels/models.py:77
+msgid "atividades"
+msgstr ""
+
+#: travels/models.py:89
+msgid "A data da atividade deve estar dentro do período da viagem."
+msgstr ""
+
+#: travels/templates/travels/_paginacao.html:5
+msgid "Anterior"
+msgstr ""
+
+#: travels/templates/travels/_paginacao.html:7
+#, python-format
+msgid "Página %(num)s de %(total)s"
+msgstr ""
+
+#: travels/templates/travels/_paginacao.html:9
+msgid "Próxima"
+msgstr ""
+
+#: travels/templates/travels/atividade_confirm_delete.html:6
+msgid "Excluir atividade"
+msgstr ""
+
+#: travels/templates/travels/atividade_confirm_delete.html:9
+#, python-format
+msgid "Tem certeza que deseja excluir a atividade \"%(nome)s\"?"
+msgstr ""
+
+#: travels/templates/travels/atividade_confirm_delete.html:12
+#: travels/templates/travels/viagem_confirm_delete.html:12
+msgid "Sim, excluir"
+msgstr ""
+
+#: travels/templates/travels/atividade_confirm_delete.html:13
+#: travels/templates/travels/viagem_confirm_delete.html:13
+msgid "Cancelar"
+msgstr ""
+
+#: travels/templates/travels/atividade_form.html:6
+msgid "Atividade"
+msgstr ""
+
+#: travels/templates/travels/atividade_form.html:7
+msgid "Editar atividade"
+msgstr ""
+
+#: travels/templates/travels/atividade_form.html:7
+msgid "Nova atividade"
+msgstr ""
+
+#: travels/templates/travels/atividade_form.html:13
+#: travels/templates/travels/viagem_form.html:13
+msgid "Salvar"
+msgstr ""
+
+#: travels/templates/travels/feed.html:6
+msgid "Comunidade"
+msgstr ""
+
+#: travels/templates/travels/feed.html:7
+msgid "Feed público"
+msgstr ""
+
+#: travels/templates/travels/feed.html:8
+msgid "Roteiros compartilhados por outros viajantes."
+msgstr ""
+
+#: travels/templates/travels/feed.html:12
+msgid "Categoria"
+msgstr ""
+
+#: travels/templates/travels/feed.html:14
+msgid "Todas"
+msgstr ""
+
+#: travels/templates/travels/feed.html:46
+msgid "Ver roteiro completo"
+msgstr ""
+
+#: travels/templates/travels/feed.html:50
+msgid "Nenhum roteiro público encontrado."
+msgstr ""
+
+#: travels/templates/travels/viagem_confirm_delete.html:6
+#: travels/templates/travels/viagem_detail.html:30
+msgid "Excluir viagem"
+msgstr ""
+
+#: travels/templates/travels/viagem_confirm_delete.html:9
+#, python-format
+msgid "Tem certeza que deseja excluir a viagem \"%(titulo)s\"?"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:16
+msgid "Criado por"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:20
+msgid "Período"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:21
+msgid "Custo total estimado"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:23
+#: travels/templates/travels/viagem_list.html:22
+msgid "Pública"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:23
+#: travels/templates/travels/viagem_list.html:22
+msgid "Privada"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:29
+#: travels/templates/travels/viagem_form.html:7
+msgid "Editar viagem"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:31
+msgid "+ Adicionar atividade"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:36
+msgid "Itinerário"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:46
+#: travels/templates/travels/viagem_list.html:25
+msgid "Editar"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:47
+#: travels/templates/travels/viagem_list.html:26
+msgid "Excluir"
+msgstr ""
+
+#: travels/templates/travels/viagem_detail.html:52
+msgid "Nenhuma atividade cadastrada ainda."
+msgstr ""
+
+#: travels/templates/travels/viagem_form.html:6
+msgid "Viagem"
+msgstr ""
+
+#: travels/templates/travels/viagem_list.html:7
+msgid "Minhas viagens"
+msgstr ""
+
+#: travels/templates/travels/viagem_list.html:9
+msgid "+ Nova viagem"
+msgstr ""
+
+#: travels/templates/travels/viagem_list.html:24
+msgid "Ver"
+msgstr ""
+
+#: travels/templates/travels/viagem_list.html:31
+msgid "Você ainda não cadastrou nenhuma viagem."
+msgstr ""

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block main_class %}narrow{% endblock %}
+{% block content %}
+<div class="page-heading">
+    <span class="eyebrow">{% trans "Bem-vindo de volta" %}</span>
+    <h1>{% trans "Entrar" %}</h1>
+</div>
+<div class="card form-card">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-block" type="submit">{% trans "Entrar" %}</button>
+    </form>
+</div>
+<p style="margin-top:14px; font-size:13.5px; color:var(--ink-soft);">
+    {% trans "Ainda não tem conta?" %} <a href="{% url 'travels:registrar' %}" style="color:var(--accent); font-weight:600;">{% trans "Criar conta" %}</a>
+</p>
+{% endblock %}

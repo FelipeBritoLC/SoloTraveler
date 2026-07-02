@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="page-heading" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <div>
+        <span class="eyebrow">{{ user.username }}</span>
+        <h1>{% trans "Minhas viagens" %}</h1>
+    </div>
+    <a class="btn" href="{% url 'travels:viagem_create' %}">{% trans "+ Nova viagem" %}</a>
+</div>
+
+<div class="trip-grid">
+    {% for viagem in viagens %}
+        <div class="trip-tile">
+            {% if viagem.foto %}
+                <img src="{{ viagem.foto.url }}" alt="{{ viagem.titulo }}">
+            {% else %}
+                {% include "travels/_no_photo.html" %}
+            {% endif %}
+            <div class="tile-overlay">
+                <span class="t-title">{{ viagem.titulo }}</span>
+                <span class="t-badge">{% if viagem.publica %}{% trans "Pública" %}{% else %}{% trans "Privada" %}{% endif %}</span>
+                <div class="t-actions">
+                    <a href="{% url 'travels:viagem_detail' viagem.pk %}">{% trans "Ver" %}</a>
+                    <a href="{% url 'travels:viagem_update' viagem.pk %}">{% trans "Editar" %}</a>
+                    <a href="{% url 'travels:viagem_delete' viagem.pk %}">{% trans "Excluir" %}</a>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="tile-empty">{% trans "Você ainda não cadastrou nenhuma viagem." %}</div>
+    {% endfor %}
+</div>
+
+{% include "travels/_paginacao.html" %}
+{% endblock %}

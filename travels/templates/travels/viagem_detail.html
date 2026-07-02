@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block main_class %}narrow{% endblock %}
+{% block content %}
+<div class="hero-photo">
+    {% if viagem.foto %}
+        <img src="{{ viagem.foto.url }}" alt="{{ viagem.titulo }}">
+    {% else %}
+        {% include "travels/_no_photo.html" %}
+    {% endif %}
+</div>
+
+<div class="page-heading">
+    <span class="eyebrow">{{ viagem.destino }}</span>
+    <h1>{{ viagem.titulo }}</h1>
+    <p class="sub">{% trans "Criado por" %} {{ viagem.usuario.username }}</p>
+</div>
+
+<div class="trip-meta">
+    <div class="item">{% trans "Período" %}<strong>{{ viagem.data_inicio }} → {{ viagem.data_fim }}</strong></div>
+    <div class="item">{% trans "Custo total estimado" %}<strong>R$ {{ viagem.custo_total }}</strong></div>
+    <div class="item">
+        <span class="visibility-badge">{% if viagem.publica %}{% trans "Pública" %}{% else %}{% trans "Privada" %}{% endif %}</span>
+    </div>
+</div>
+
+{% if user == viagem.usuario %}
+    <div class="actions-row">
+        <a class="btn btn-secondary btn-sm" href="{% url 'travels:viagem_update' viagem.pk %}">{% trans "Editar viagem" %}</a>
+        <a class="btn btn-danger btn-sm" href="{% url 'travels:viagem_delete' viagem.pk %}">{% trans "Excluir viagem" %}</a>
+        <a class="btn btn-sm" href="{% url 'travels:atividade_create' viagem.pk %}">{% trans "+ Adicionar atividade" %}</a>
+    </div>
+{% endif %}
+
+<div class="itinerary">
+    <h2 style="font-size:18px; margin-bottom:14px;">{% trans "Itinerário" %}</h2>
+    <ul class="itinerary-list">
+        {% for atividade in viagem.atividades.all %}
+        <li class="itin-item">
+            <div class="itin-time">{{ atividade.data_hora }}</div>
+            <div class="itin-name">{{ atividade.nome }}</div>
+            <div class="itin-cat">{{ atividade.categoria.nome }}</div>
+            <div class="itin-cost">R$ {{ atividade.custo_estimado }}</div>
+            {% if user == viagem.usuario %}
+            <div class="itin-actions">
+                <a href="{% url 'travels:atividade_update' atividade.pk %}">{% trans "Editar" %}</a>
+                <a href="{% url 'travels:atividade_delete' atividade.pk %}">{% trans "Excluir" %}</a>
+            </div>
+            {% endif %}
+        </li>
+        {% empty %}
+        <p class="itin-empty">{% trans "Nenhuma atividade cadastrada ainda." %}</p>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block main_class %}narrow{% endblock %}
+{% block content %}
+<div class="page-heading">
+    <span class="eyebrow">{% trans "Comece a planejar" %}</span>
+    <h1>{% trans "Criar conta" %}</h1>
+</div>
+<div class="card form-card">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-block" type="submit">{% trans "Criar conta" %}</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block main_class %}narrow{% endblock %}
+{% block content %}
+<div class="page-heading">
+    <h1>{% trans "Excluir atividade" %}</h1>
+</div>
+<div class="card form-card">
+    <p>{% blocktrans with nome=object.nome %}Tem certeza que deseja excluir a atividade "{{ nome }}"?{% endblocktrans %}</p>
+    <form method="post" style="display:flex; gap:8px; margin-top:12px;">
+        {% csrf_token %}
+        <button class="btn btn-danger" type="submit">{% trans "Sim, excluir" %}</button>
+        <a class="btn btn-secondary" href="{% url 'travels:viagem_detail' object.viagem.pk %}">{% trans "Cancelar" %}</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% load i18n %}
+{% if is_paginated %}
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.categoria %}&categoria={{ request.GET.categoria }}{% endif %}">« {% trans "Anterior" %}</a>
+    {% endif %}
+    <span>{% blocktrans with num=page_obj.number total=page_obj.paginator.num_pages %}Página {{ num }} de {{ total }}{% endblocktrans %}</span>
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{% if request.GET.categoria %}&categoria={{ request.GET.categoria }}{% endif %}">{% trans "Próxima" %} »</a>
+    {% endif %}
+</div>
+{% endif %}
