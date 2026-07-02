@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block main_class %}narrow{% endblock %}
+
 {% block content %}
 <div class="page-heading">
     <span class="eyebrow">{% trans "Comunidade" %}</span>
@@ -18,37 +18,39 @@
     </select>
 </form>
 
-{% for viagem in viagens %}
-<article class="post">
-    <div class="post-header">
-        <div class="avatar">{{ viagem.usuario.username|slice:":1"|upper }}</div>
-        <div class="who">
-            <strong>{{ viagem.usuario.username }}</strong><br>
-            <span class="meta">{{ viagem.destino }}</span>
+<div class="feed-grid">
+    {% for viagem in viagens %}
+    <article class="post">
+        <div class="post-header">
+            <div class="avatar">{{ viagem.usuario.username|slice:":1"|upper }}</div>
+            <div class="who">
+                <strong>{{ viagem.usuario.username }}</strong><br>
+                <span class="meta">{{ viagem.destino }}</span>
+            </div>
         </div>
-    </div>
-    <a class="post-photo" href="{% url 'travels:viagem_detail' viagem.pk %}">
-        {% if viagem.foto %}
-            <img src="{{ viagem.foto.url }}" alt="{{ viagem.titulo }}">
-        {% else %}
-            {% include "travels/_no_photo.html" %}
-        {% endif %}
-    </a>
-    <div class="post-body">
-        <h3><a href="{% url 'travels:viagem_detail' viagem.pk %}">{{ viagem.titulo }}</a></h3>
-        <p class="dest">{{ viagem.destino }}</p>
-        <p class="dates">{{ viagem.data_inicio }} → {{ viagem.data_fim }}</p>
-        {% if viagem.categorias %}
-        <div class="stamps">
-            {% for c in viagem.categorias %}<span class="stamp">{{ c.nome }}</span>{% endfor %}
+        <a class="post-photo" href="{% url 'travels:viagem_detail' viagem.pk %}">
+            {% if viagem.foto %}
+                <img src="{{ viagem.foto.url }}" alt="{{ viagem.titulo }}">
+            {% else %}
+                {% include "travels/_no_photo.html" %}
+            {% endif %}
+        </a>
+        <div class="post-body">
+            <h3><a href="{% url 'travels:viagem_detail' viagem.pk %}">{{ viagem.titulo }}</a></h3>
+            <p class="dest">{{ viagem.destino }}</p>
+            <p class="dates">{{ viagem.data_inicio }} → {{ viagem.data_fim }}</p>
+            {% if viagem.categorias %}
+            <div class="stamps">
+                {% for c in viagem.categorias %}<span class="stamp">{{ c.nome }}</span>{% endfor %}
+            </div>
+            {% endif %}
+            <a class="view-link" href="{% url 'travels:viagem_detail' viagem.pk %}">{% trans "Ver roteiro completo" %} →</a>
         </div>
-        {% endif %}
-        <a class="view-link" href="{% url 'travels:viagem_detail' viagem.pk %}">{% trans "Ver roteiro completo" %} →</a>
-    </div>
-</article>
-{% empty %}
-<p class="itin-empty">{% trans "Nenhum roteiro público encontrado." %}</p>
-{% endfor %}
+    </article>
+    {% empty %}
+    <p class="itin-empty">{% trans "Nenhum roteiro público encontrado." %}</p>
+    {% endfor %}
+</div>
 
 {% include "travels/_paginacao.html" %}
 {% endblock %}
